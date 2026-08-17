@@ -30,6 +30,14 @@ app.get("/", (req, res) => {
   });
 });
 
+// Health check endpoint
+app.get("/health", (req, res) => {
+  res.status(200).json({
+    status: "UP",
+    service: "Cloud Task Manager API",
+  });
+});
+
 // GET all tasks
 app.get("/api/tasks", (req, res) => {
   res.json(tasks);
